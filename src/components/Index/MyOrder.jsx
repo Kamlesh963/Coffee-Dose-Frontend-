@@ -17,7 +17,7 @@ function MyOrder() {
     }
     const fetchorderdata = async () => {
         try {
-            const response = await fetch('http://localhost:1300/api/myorders');
+            const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/myorders');
             const data = await response.json();
             setData(data);
             if (data.length == 0)

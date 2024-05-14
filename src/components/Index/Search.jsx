@@ -15,7 +15,7 @@ function Search() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:1300/api/products');
+      const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/products');
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -25,7 +25,7 @@ function Search() {
 
   const fetchCartItemByName = async (productName) => {
     try {
-      const response = await fetch(`http://localhost:1300/api/cart?productName=${productName}`);
+      const response = await fetch(`https://coffee-dose-backend-1.onrender.com/api/cart?productName=${productName}`);
       const cartItems = await response.json();
       return cartItems.length > 0 ? cartItems[0] : null;
     } catch (error) {
@@ -46,7 +46,7 @@ function Search() {
 
   const addToCart = async (product) => {
     try {
-      const response = await fetch('http://localhost:1300/api/cart', {
+      const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

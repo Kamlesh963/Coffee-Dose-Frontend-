@@ -68,7 +68,7 @@ function SignUp() {
 
         if (isValid) {
             try {
-                const response = await fetch('http://localhost:1300/api/signup', {
+                const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

@@ -22,7 +22,7 @@ function Category(props) {
 
     const addToCart = async (product) => {
         try {
-            const response = await fetch('http://localhost:1300/api/cart', {
+            const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ function Category(props) {
     useEffect(() => {
         const fetchProductsByCoffeeid = async () => {
             try {
-                const response = await fetch(`http://localhost:1300/api/category?Coffeeid=${props.data}`);
+                const response = await fetch(`https://coffee-dose-backend-1.onrender.com/api/category?Coffeeid=${props.data}`);
                 // console.log("my datad response", response)
                 if (!response.ok) {
                     throw new Error(`Error fetching products: ${response.status}`);

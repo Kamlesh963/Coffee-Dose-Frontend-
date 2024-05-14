@@ -16,7 +16,7 @@ const EditProduct = ({ productId, showModal, onClose }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:1300/api/products/${productId}`);
+        const response = await axios.get(`https://coffee-dose-backend-1.onrender.com/api/products/${productId}`);
         setFormData(response.data);
       } catch (error) {
         console.error('Error fetching product:', error);
@@ -39,7 +39,7 @@ const EditProduct = ({ productId, showModal, onClose }) => {
         return;
       }
       // Send updated data to server
-      await axios.put(`http://localhost:1300/api/products/${productId}`, formData);
+      await axios.put(`https://coffee-dose-backend-1.onrender.com/api/products/${productId}`, formData);
       // Close modal after successful submission
       onClose();
     } catch (error) {

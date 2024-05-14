@@ -16,7 +16,7 @@ function Cart() {
 
   const fetchCartData = async () => {
     try {
-      const response = await fetch('http://localhost:1300/api/cart');
+      const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/cart');
       const data = await response.json();
       setCartData(data);
       setShow(data.length === 0); // Show is true only when the cart is empty
@@ -35,7 +35,7 @@ function Cart() {
   const handleIncrement = async (cartItemId, currentQuantity) => {
     try {
       const updatedQuantity = parseInt(currentQuantity, 10) + 1;
-      const response = await fetch(`http://localhost:1300/api/cart/${cartItemId}`, {
+      const response = await fetch(`https://coffee-dose-backend-1.onrender.com/api/cart/${cartItemId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ function Cart() {
     if (currentQuantity > 1) {
       try {
         const updatedQuantity = currentQuantity - 1;
-        const response = await fetch(`http://localhost:1300/api/cart/${cartItemId}`, {
+        const response = await fetch(`https://coffee-dose-backend-1.onrender.com/api/cart/${cartItemId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ function Cart() {
 
   const handleDelete = async (cartItemId) => {
     try {
-      const response = await fetch(`http://localhost:1300/api/cart/${cartItemId}`, {
+      const response = await fetch(`https://coffee-dose-backend-1.onrender.com/api/cart/${cartItemId}`, {
         method: 'DELETE',
       });
 
@@ -103,7 +103,7 @@ function Cart() {
       // Iterate through each item in the cart and update the total
       const updatedCartData = await Promise.all(cartData.map(async (item) => {
         const total = item.Quantity * parseFloat(item.MainPrice);
-        const response = await fetch(`http://localhost:1300/api/cart/${item._id}`, {
+        const response = await fetch(`https://coffee-dose-backend-1.onrender.com/api/cart/${item._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

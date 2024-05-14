@@ -24,7 +24,7 @@ import MyOrder from './components/Index/MyOrder';
 function App() {
   const handleadd = async () => {
     try {
-      const response = await axios.post("http://localhost:1300/api/products", data);
+      const response = await axios.post("https://coffee-dose-backend-1.onrender.com/api/products", data);
       console.log(response.data.message);
       console.log(response.data.createdProducts);
     } catch (error) {

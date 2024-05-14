@@ -34,7 +34,7 @@ function Admin() {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:1300/api/products');
+            const response = await axios.get('https://coffee-dose-backend-1.onrender.com/api/products');
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -59,7 +59,7 @@ function Admin() {
 
     const handleDeleteProduct = async (productId) => {
         try {
-            await axios.delete(`http://localhost:1300/api/products/${productId}`);
+            await axios.delete(`https://coffee-dose-backend-1.onrender.com/api/products/${productId}`);
             fetchData();
         } catch (error) {
             console.error('Error deleting product:', error);

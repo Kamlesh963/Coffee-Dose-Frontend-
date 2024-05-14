@@ -25,7 +25,7 @@ const AddProduct = ({ showModal, onClose }) => {
         return;
       }
       // Send data to server
-      await axios.post("http://localhost:1300/api/products", formData);
+      await axios.post("https://coffee-dose-backend-1.onrender.com/api/products", formData);
       // Close modal after successful submission
       onClose();
     } catch (error) {

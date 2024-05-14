@@ -25,7 +25,7 @@ const Payment = () => {
 
     const fetchCartData = async () => {
         try {
-            const response = await fetch('http://localhost:1300/api/cart');
+            const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/cart');
             const data = await response.json();
             setCartData(data);
             let newTotal = data.reduce((acc, item) => {
@@ -69,7 +69,7 @@ const Payment = () => {
         console.log("the deatails", data)
 
         try {
-            const response = await fetch('http://localhost:1300/api/myorders', {
+            const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/myorders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ const Payment = () => {
         myorderdetail()
         alert("Payment Successfully!")
         localStorage.removeItem('formdata')
-        axios.delete('http://localhost:1300/api/cartitems');
+        axios.delete('https://coffee-dose-backend-1.onrender.com/api/cartitems');
         navigate('/')
     };
 

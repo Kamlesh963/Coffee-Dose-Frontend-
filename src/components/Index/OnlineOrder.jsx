@@ -90,7 +90,7 @@ const OnlineOrder = () => {
         navigate('/payment');
 
         try {
-            const response = await fetch('http://localhost:1300/api/address', {
+            const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/address', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ const OnlineOrder = () => {
 
     const fetchCartData = async () => {
         try {
-            const response = await fetch('http://localhost:1300/api/cart');
+            const response = await fetch('https://coffee-dose-backend-1.onrender.com/api/cart');
             const data = await response.json();
             setCartData(data);
             let newTotal = data.reduce((acc, item) => {
